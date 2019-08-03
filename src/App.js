@@ -1,26 +1,40 @@
+
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import StackedBar from './components/StackedBar';
+import GroupedBar from './components/GroupedBar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <table>
+      <tr>
+        <td colSpan="3"><h3><center>Digital Team</center></h3></td></tr>
+      <tr>
+        <td class="rwd-table">
+          <h3><center>Business Finance Dashboard</center></h3>
+          <div id ="stackedChart">
+            <StackedBar/>
+          </div>
+        </td>
+      <td class="emptybox">&nbsp;</td>
+      <td class="rwd-table">
+      <h3><center>Cashflow Dashboard</center></h3>
+      <table>
+        <tr>
+          <th>Bank Name</th>
+          <th>Account Number</th>
+          <th>Balance</th>
+        </tr>
+      </table>
+      <div id ="groupedChart">
+        <GroupedBar/>
+      </div>
+      </td>
+    </tr>
+    </table>
     </div>
-  );
+  )
 }
-
 export default App;
+
