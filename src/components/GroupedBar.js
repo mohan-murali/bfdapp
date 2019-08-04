@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import gql from 'graphql-tag';
 import { BarChart } from "react-d3-components";
 import { Query } from 'react-apollo';
@@ -16,6 +16,15 @@ const GROUPED_QUERY = gql `
 
 const GroupedBar =()=> {
 
+    const getContent = (banks) => {
+        return ( 
+          <tr>
+              <td data-th="Month">{banks.month}</td>
+              <td data-th="Payable">{banks.payable}</td>
+              <td data-th="Receivable">{banks.receivable}</td>
+          </tr>
+        );
+      }
     return (
         <React.Fragment>
             <Query query = { GROUPED_QUERY}>
@@ -34,20 +43,34 @@ const GroupedBar =()=> {
                                 values: data.cashFlow.map( val=>{return { x: val.month, y: val.receivable} })
                             }
                         ]
+                        let tooltipData = function(x, y0, y, total) {
+                            return y.toString();
+                            };
+                            
                         return(
-                        <td class="rwd-table">
-                            <h3><center>Cashflow Dashboard</center></h3>
-                            <table>
-                                <tr>
-                                    <th>Bank Name</th>
-                                    <th>Account Number</th>
-                                    <th>Balance</th>
-                                </tr>
-                            </table>
-                            <div id ="groupedChart" className="display-container">
-                                <BarChart groupedBars data={resData} width={800} height={400} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} />
+                        <React.Fragment>
+                            <h3 className="heading-main"><center>Cashflow</center></h3>
+                            <div className="display-container">
+                                <table>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Payable</th>
+                                        <th>Receivable</th>
+                                    </tr>
+                                    { data.cashFlow.map(x => getContent(x)) }
+                                </table>
+                                <div id ="groupedChart" className="display-container">
+                                <BarChart groupedBars data={resData} width={800} height={400} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} 
+                                        tooltipHtml={tooltipData}
+                                        tooltipMode={'mouse'}
+                                        tooltipContained
+                                        xAxis={{innerTickSize: 6, label: "Months"}}
+                                        yAxis={{label: "Balance"}}
+                                        shapeColor={"red"} />
                             </div>
-                        </td>
+                            </div>
+                            
+                        </React.Fragment>
                         );
                     }
                 }}

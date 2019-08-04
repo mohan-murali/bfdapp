@@ -14,16 +14,31 @@ const App = () => {
 
   const [screenState, setScreenState] = useState(true);
 
+  const accountClick = ()=>{
+    setScreenState(true);
+  }
+
+  const cashFlowClick = () => {
+    setScreenState(false);
+  }
+
   return (
     <ApolloProvider client={client}>
-      <div className="app-container">
-        {screenState &&
-          <StackedBar/>
-        }
-        {!screenState &&
-          <GroupedBar/>
-        }
-      </div>
+      <React.Fragment>
+        <nav className="nav-bar">
+          <div className="main-nav">BFD</div>
+          <div className="nav-item" onClick={accountClick}>Account Details</div>
+          <div className="nav-item" onClick= {cashFlowClick}>Cash FLow</div>
+        </nav>
+        <div className="app-container">
+          {screenState &&
+            <StackedBar/>
+          }
+          {!screenState &&
+            <GroupedBar/>
+          }
+        </div>
+      </React.Fragment>
     </ApolloProvider>
   )
 }
