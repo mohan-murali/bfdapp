@@ -1,474 +1,199 @@
-
 .App {
+  text-align: center;
+}
 
-  text-align: 
-  center;
-  
-  }
-  
-  
-  
-  .App-logo {
-  
-  animation: App-logo-spin 
-  infinite 20s 
-  linear;
-  
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-  
-  pointer-events: 
-  none;
-  
-  }
-  
-  
-  
-  .App-header {
-  
-  background-color: 
-  #282c34;
-  
-  min-height: 
-  100vh;
-  
-  display: 
-  flex;
-  
-  flex-direction: 
-  column;
-  
-  align-items: 
-  center;
-  
-  justify-content: 
-  center;
-  
-  font-size: 
-  calc(10px + 
-  2vmin);
-  
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
-  
-  }
-  
-  
-  
-  .App-link {
-  
+}
+
+.App-link {
   color: #61dafb;
-  
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  /* Dashboard CSS */
-  
-  body {
-  
-  background: 
-  #538cb5;  
-  
+  to {
+    transform: rotate(360deg);
   }
-  
-  .app-container {
-  
-  background: 
-  #fff; 
-  
-  max-width: 
-  910px;
-  
-  margin: 20px
-  auto;
-  
-  padding: 
-  0px 40px 
-  40px 40px;
-  
-  }
-  
-  
-  
-  .emptybox{
-  
-  width:150px;
-  
-  }
-  
-  
-  
-  h3 {
-  
+}
+/* Dashboard CSS */
+body {
+  background: #538cb5;
+}
+
+.app-container {
+  background: #fff;
+  max-width: 90%; 
+  margin: 20px auto;
+  padding: 0px 40px 40px 40px;
+}
+
+.emptybox {
+  width: 150px;
+}
+
+h3 {
   color: #538cb5;
-  
-  }
-  
-  input {
-  
-  margin: 20px
-  0;
-  
-  }
- 
-  $breakpoint-alpha: 480px; 
-  
-  
-  
-  .rwd-table {
-  
-  margin: 1em
-  0;
-  
-  min-width: 
-  300px; 
-  
-  
-  tr {
-  
-  border-top: 
-  1px solid 
-  #ddd;
-  
-  border-bottom: 
-  1px solid 
-  #ddd;
-  
-  }
-  
-  
-  th {
-  
-  display: 
-  none; 
-  
-  }
-  
-  
-  td {
-  
-  display: 
-  block; 
-  
-  
-  &:first-child {
-  
+}
+
+input {
+  margin: 20px 0;
+}
+
+.rwd-table {
+  margin: 1em 0;
+  min-width: 300px;
+}
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.rwd-table th {
+  display: none;
+}
+.rwd-table td {
+  display: block;
+}
+.rwd-table td:first-child {
   padding-top: .5em;
-  
-  }
-  
-  &:last-child {
-  
-  padding-bottom: 
-  .5em;
-  
-  }
-  
-  
-  
-  &:before {
-  
-  content: 
-  attr(data-th)": ";
-  
-  font-weight: 
-  bold;
-  
-  
-  
+}
+.rwd-table td:last-child {
+  padding-bottom: .5em;
+}
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
   width: 6.5em;
-  
-  display: 
-  inline-block;
-  
-  
-  @media (min-width: $breakpoint-alpha) {
-  
-  display: 
-  none;
-  
+  display: inline-block;
+}
+@media (min-width: 480px) {
+  .rwd-table td:before {
+    display: none;
   }
-  
+}
+.rwd-table th, .rwd-table td {
+  text-align: left;
+}
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    display: table-cell;
+    padding: .25em .5em;
   }
-  
+  .rwd-table th:first-child, .rwd-table td:first-child {
+    padding-left: 0;
   }
-  
-  
-  th, td {
-  
-  text-align: 
-  left;
-  
-  
-  @media (min-width: $breakpoint-alpha) {
-  
-  display: 
-  table-cell;
-  
-  padding: 
-  .25em .5em;
-  
-  
-  &:first-child {
-  
-  padding-left: 0;
-  
+  .rwd-table th:last-child, .rwd-table td:last-child {
+    padding-right: 0;
   }
-  
-  
-  &:last-child {
-  
-  padding-right: 
-  0;
-  
-  }
-  
-  }
+}
 
-  }
-
-  }
-  
-
-  
-  @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
-  
-  
-  
-  body {
-  
-  padding: 
-  0 2em;
-  
-  font-family: Montserrat, 
-  sans-serif;
-  
-  -webkit-font-smoothing: 
-  antialiased;
-  
-  text-rendering: 
-  optimizeLegibility;
-  
+body {
+  padding: 0 2em;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   color: #444;
-  
-  background: 
-  #eee;
-  
-  }
-  
-  
-  
-  h1 {
-  
-  font-weight: 
-  normal;
-  
-  letter-spacing: 
-  -1px;
-  
+  background: #eee;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
   color: #34495E;
-  
-  }
-  
-  
-  
-  .rwd-table {
-  
-  background: 
-  #ccccb3;
-  
+}
+
+.rwd-table {
+  background: #ccccb3;
   color: #fff;
-  
-  border-radius: 
-  .4em;
-  
-  overflow: 
-  hidden;
-  
-  tr {
-  
-  border-color: lighten(#34495E,10%);
-  
+  border-radius: .4em;
+  overflow: hidden;
+}
+.rwd-table tr {
+  border-color: #46637f;
+}
+.rwd-table th, .rwd-table td {
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .rwd-table th, .rwd-table td {
+    padding: 1em !important;
   }
-  
-  th, td {
-  
-  margin: .5em
-  1em;
-  
-  @media (min-width: $breakpoint-alpha) {
-  
-  padding: 
-  1em !important; 
-  
-  }
-  
-  }
-  
-  th, td:before {
-  
+}
+.rwd-table th, .rwd-table td:before {
   color: #dd5;
-  
-  }
-  
-  }
-  
-  .div {
-  
-  font: 10px
-  sans-serif;
-  }
-  
-  
-  
-  .axis path,
-  
-  .axis line {
-  
+}
+
+.div {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
   fill: none;
-  
   stroke: #000;
- 
-  }
-  
-  
-  
-  .y.axis {
-  
-  font: 10px
-  sans-serif;
-  
-  }
-  
-  .x.axis path {
-  
+}
+
+.y.axis {
+  font: 10px sans-serif;
+}
+
+.x.axis path {
   display: yes;
-  
-  }
-  
-  label {
-  
-  position: 
-  absolute;
- 
+}
+
+label {
+  position: absolute;
   top: 10px;
- 
   right: 250px;
-  
-  }
-  
-  
-  
-  .d3-tip {
-  
-  
-  
-  line-height: 
-  1;
-  
-  
-  
-  font-weight: 
-  bold;
-  
-  
-  
-  padding: 
-  12px;
-  
-  
-  
-  background: 
-  rgba(0, 
-  0, 0, 0.8);
-  
-  
-  
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  
-  
-  
-  border-radius: 
-  2px;
-  
-  
-  
-  }
-  
-  
-  
-  
-  
-  
-  /* Creates a small triangle extender for the tooltip */
-  
-  
-  
-  .d3-tip:after {
-  
-  
-  
-  box-sizing: 
-  border-box;
-  
-  
-  
-  display: 
-  inline;
-  
-  
-  
-  font-size: 
-  10px;
-  
-  
-  
-  width: 100%;
-  
-  
-  
-  line-height: 
-  1;
-  
-  
-  
-  color: rgba(0,
-  0, 0, 
-  0.8);
-  
-  
-  
-  content: 
-  "\25BC";
-  
-  
-  
-  position: 
-  absolute;
-  
-  
-  
-  text-align: 
-  center;
-  
-  
-  
-  }
-  
-  
-  
-  
-  
-  
-  /* Style northward tooltips differently */
-  
-  .d3-tip.n:after {
-  
-  margin: -1px
-  0 0 
-  0;
-  
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
   top: 100%;
-  
   left: 0;
-  
-  }
+}
+
+.display-container{
+  display: flex;
+  justify-content: space-around;
+}
   
   
   

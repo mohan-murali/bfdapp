@@ -35,7 +35,19 @@ const GroupedBar =()=> {
                             }
                         ]
                         return(
-                            <BarChart groupedBars data={resData} width={800} height={400} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} />
+                        <td class="rwd-table">
+                            <h3><center>Cashflow Dashboard</center></h3>
+                            <table>
+                                <tr>
+                                    <th>Bank Name</th>
+                                    <th>Account Number</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </table>
+                            <div id ="groupedChart" className="display-container">
+                                <BarChart groupedBars data={resData} width={800} height={400} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} />
+                            </div>
+                        </td>
                         );
                     }
                 }}

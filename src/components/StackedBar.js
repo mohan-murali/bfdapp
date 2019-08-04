@@ -54,15 +54,24 @@ const StackedBar = () => {
                     ]
                     return(
                         <React.Fragment>
-                            <table>
-                                <tr>
-                                    <th>Bank Name</th>
-                                    <th>Account Number</th>
-                                    <th>Balance</th>
-                                </tr>
-                                { data.accountBalance.map(x => getContent(x)) }
-                            </table>
-                            <BarChart groupedBars data={resData} width={800} height={400} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} />
+                            <div>
+                                <h3><center>Business Finance Dashboard</center></h3>
+                                <div id ="stackedChart" className="display-container">
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <th>Bank Name</th>
+                                                <th>Account Number</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                            { data.accountBalance.map(x => getContent(x)) }
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <BarChart data={resData} width={700} height={500} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} />
+                                    </div>
+                                </div>
+                            </div>
                         </React.Fragment>
                     );
                 }
