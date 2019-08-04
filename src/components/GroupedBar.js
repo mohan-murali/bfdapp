@@ -67,9 +67,18 @@ const GroupedBar =()=> {
                                         xAxis={{innerTickSize: 6, label: "Months"}}
                                         yAxis={{label: "Balance"}}
                                         shapeColor={"red"} />
+                                </div>
+                                <div className="legends">
+                                    <div className="icon-payable"/>
+                                    <div className="lgnd-payable">
+                                        Payable
+                                    </div>
+                                    <div className="icon-receivable"/>
+                                    <div className="lgnd-receivable">
+                                        Receivable
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                            
                         </React.Fragment>
                         );
                     }

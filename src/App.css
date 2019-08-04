@@ -170,6 +170,46 @@ th {
   justify-content: center;
   align-items: center;
 }
+
+.legends{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+}
+
+.lgnd-payable{
+  color: #006400;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  display: block;
+  float: left;
+}
+
+.icon-payable{
+  height: 15px;
+  width: 15px;
+  margin-top: 15px;
+  background-color: #006400;  
+  display: block;
+  float: left;
+}
+
+.lgnd-receivable{
+  color: #32CD32;
+  padding-top: 10px;
+  padding-bottom: 50px;
+
+}
+
+.icon-receivable{
+  height: 15px;
+  width: 15px;
+  margin-top: 15px;
+  background-color: #32CD32;  
+  display: block;
+  float: left;
+}
   
   
   
