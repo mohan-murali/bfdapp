@@ -36,29 +36,39 @@ const StackedBar = () => {
                     let resData = [
                         {
                             label: "DBS",
-                            values: data.accountBalance.filter(x=> x.bankName === "DBS").map( val=>{return { x: val.month, y: val.balance} })
+                            values: data.accountBalance
+                                .filter(x=> x.bankName === "DBS")
+                                .map( val=>{return { x: val.month, y: val.balance} })
                         },
                         {
                             label: "CBA",
-                            values: data.accountBalance.filter(x=> x.bankName === "CBA").map( val=>{return { x: val.month, y: val.balance} })
+                            values: data.accountBalance
+                                .filter(x=> x.bankName === "CBA")
+                                .map( val=>{return { x: val.month, y: val.balance} })
                         },
                         {
                             label: "ING",
-                            values: data.accountBalance.filter(x=> x.bankName === "ING").map( val=>{return { x: val.month, y: val.balance} })
+                            values: data.accountBalance
+                                .filter(x=> x.bankName === "ING")
+                                .map( val=>{return { x: val.month, y: val.balance} })
                         },
                         {
                             label: "HDFC",
-                            values: data.accountBalance.filter(x=> x.bankName === "HDFC").map( val=>{return { x: val.month, y: val.balance} })
+                            values: data.accountBalance
+                                .filter(x=> x.bankName === "HDFC")
+                                .map( val=>{return { x: val.month, y: val.balance} })
                         }
                     ]
 
-                    let tooltipData = function(x, y0, y, total) {
+                    let tooltipData = function(x, y0, y) {
                         return y.toString();
-                        };
+                    };
 
                     return(
                         <React.Fragment>
-                            <h3 className="heading-main"><center>Account Details</center></h3>
+                            <h3 className="heading-main">
+                                <center>Account Details</center>
+                            </h3>
                             <div id ="stackedChart" className="display-container">
                                 <div>
                                     <table>
@@ -71,7 +81,10 @@ const StackedBar = () => {
                                     </table>
                                 </div>
                                 <div>
-                                    <BarChart data={resData} width={700} height={500} margin={{ top: 10, bottom: 50, left: 50, right: 10 }} tooltipHtml={tooltipData}
+                                    <BarChart data={resData} 
+                                        width={700} height={500} 
+                                        margin={{ top: 10, bottom: 50, left: 50, right: 10 }} 
+                                        tooltipHtml={tooltipData}
                                         tooltipMode={'mouse'}
                                         tooltipContained
                                         xAxis={{innerTickSize: 6, label: "Months"}}
