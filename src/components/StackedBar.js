@@ -19,9 +19,10 @@ const StackedBar = () => {
     const getContent = (banks) => {
       return ( 
         <tr>
+            <td data-th="Month">{banks.month}</td>
+            <td data-th="Account No">{banks.accountNumber}</td>
             <td data-th="Bank Name">{banks.bankName}</td>
-            <td data-th="Accoount Number">{banks.accountNumber}</td>
-            <td data-th="Year">{banks.balance}</td>
+            <td data-th="Balance">$ {banks.balance}</td>
         </tr>
       );
     }
@@ -60,9 +61,9 @@ const StackedBar = () => {
                         }
                     ]
 
-                    let tooltipData = function(x, y0, y) {
-                        return y.toString();
-                    };
+                    let tooltipData = function(x, y0, y, total) {
+                        return '$ ' + y.toString();
+                        };
 
                     return(
                         <React.Fragment>
@@ -73,8 +74,9 @@ const StackedBar = () => {
                                 <div>
                                     <table>
                                         <tr>
+                                            <th>Month</th>
+                                            <th>Account No</th>
                                             <th>Bank Name</th>
-                                            <th>Account Number</th>
                                             <th>Balance</th>
                                         </tr>
                                         { data.accountBalance.map(x => getContent(x)) }
@@ -88,7 +90,7 @@ const StackedBar = () => {
                                         tooltipMode={'mouse'}
                                         tooltipContained
                                         xAxis={{innerTickSize: 6, label: "Months"}}
-                                        yAxis={{label: "Balance"}}
+                                        yAxis={{label: "Balance in $"}}
                                         shapeColor={"red"} />
                                 </div>
                             </div>

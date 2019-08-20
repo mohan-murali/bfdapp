@@ -30,7 +30,7 @@ body {
 
 .app-container {
   background: #fff;
-  max-width: 90%; 
+  max-width: 95%; 
   margin: 20px auto;
   padding: 0px 40px 40px 40px;
 }
@@ -255,5 +255,10 @@ th {
   font-size: 20px;
   margin-top: 40px;
 }
-  
+.nav-name{
+  padding-left: 700px;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 10px;
+}
   

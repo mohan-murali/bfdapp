@@ -8,7 +8,7 @@ import LoginPanel from './components/LoginPanel';
 
 
 const client = new ApolloClient({
-  uri: 'https://localhost:5001/graphql/'
+  uri: 'http://localhost:5000/graphql/'
 })
 
 const App = () => {
@@ -30,7 +30,6 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <React.Fragment>
         { loginState &&
           <div className="login-container">
             <LoginPanel clickLogin = {clickLogin} />
@@ -42,6 +41,8 @@ const App = () => {
               <div className="main-nav">BFD</div>
               <div className="nav-item" onClick={accountClick}>Account Details</div>
               <div className="nav-item" onClick= {cashFlowClick}>Cash FLow</div>
+              <div className="nav-name">Hi Aiswarya !</div>
+              <div className="nav-item">Sign Out</div>
             </nav>
             <div className="app-container">
               {screenState &&
@@ -53,7 +54,6 @@ const App = () => {
             </div>
           </>
         }
-      </React.Fragment>
     </ApolloProvider>
   )
 }

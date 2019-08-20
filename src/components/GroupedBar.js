@@ -9,7 +9,8 @@ const GROUPED_QUERY = gql `
         cashFlow{
         month,
         payable,
-        receivable
+        receivable,
+        year
         }
     }
 `;
@@ -20,8 +21,9 @@ const GroupedBar =()=> {
         return ( 
           <tr>
               <td data-th="Month">{banks.month}</td>
-              <td data-th="Payable">{banks.payable}</td>
-              <td data-th="Receivable">{banks.receivable}</td>
+              <td data-th="Year">{banks.year}</td>
+              <td data-th="Payable">$ {banks.payable}</td>
+              <td data-th="Receivable">$ {banks.receivable}</td>
           </tr>
         );
       }
@@ -46,7 +48,7 @@ const GroupedBar =()=> {
                             }
                         ]
                         let tooltipData = function(x, y0, y, total) {
-                            return y.toString();
+                            return '$ ' + y.toString();
                             };
                             
                         return(
@@ -58,6 +60,7 @@ const GroupedBar =()=> {
                                 <table>
                                     <tr>
                                         <th>Month</th>
+                                        <th>Year</th>
                                         <th>Payable</th>
                                         <th>Receivable</th>
                                     </tr>
